@@ -20,12 +20,31 @@ An intelligent prompt optimization tool that uses AI and prompt engineering tech
 
 ## 🚀 Quick Start
 
-### Prerequisites
+> **📖 New to this project? Check out [QUICKSTART.md](QUICKSTART.md) for a 3-minute guided setup!**
 
+### Automated Setup (Recommended)
+
+Use the helper script for easy setup:
+```bash
+./setup.sh
+```
+
+Or use specific commands:
+```bash
+./setup.sh install  # Install dependencies
+./setup.sh setup    # Create .env file
+./setup.sh demo     # Run demo
+./setup.sh test     # Run tests
+./setup.sh run      # Run the app
+```
+
+### Manual Setup
+
+#### Prerequisites
 - Python 3.8 or higher
 - OpenAI API key (optional, but required for AI features)
 
-### Installation
+#### Installation
 
 1. Clone the repository:
 ```bash
@@ -46,7 +65,7 @@ cp .env.example .env
 
 ### Usage
 
-Run the application:
+**Interactive Mode:**
 ```bash
 python main.py
 ```
@@ -56,6 +75,16 @@ Follow the interactive menu to:
 2. **Analyze a prompt** - Local analysis without API
 3. **Get AI suggestions** - Specific improvement recommendations
 4. **View tips** - Learn prompt engineering best practices
+
+**Demo Mode:**
+```bash
+python demo.py
+```
+
+**Run Tests:**
+```bash
+python test_optimizer.py
+```
 
 ## 📝 Example
 
