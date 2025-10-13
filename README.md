@@ -132,11 +132,11 @@ The app implements these key techniques:
 Create a `.env` file with:
 ```
 OPENAI_API_KEY=your_api_key_here
-OPENAI_MODEL=gpt-4o-mini
+OPENAI_MODEL=gpt-5-mini
 ```
 
 Supported models:
-- `gpt-4o-mini` (default, recommended)
+- `gpt-5-mini` (default, recommended)
 - `gpt-4`
 - `gpt-3.5-turbo`
 
