@@ -113,7 +113,7 @@ Suggestions for Improvement:
 5. Add it to your `.env` file:
    ```
    OPENAI_API_KEY=sk-your-key-here
-   OPENAI_MODEL=gpt-4o-mini
+   OPENAI_MODEL=gpt-5-mini
    ```
 
 ## Troubleshooting
