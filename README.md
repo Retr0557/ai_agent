@@ -4,7 +4,7 @@ An intelligent prompt optimization tool that uses AI and prompt engineering tech
 
 ## ✨ Features
 
-- **AI-Powered Optimization**: Uses OpenAI's GPT models to intelligently optimize prompts
+- **AI-Powered Optimization**: Uses Google's Gemini AI models to intelligently optimize prompts
 - **Comprehensive Analysis**: Analyzes prompts for key elements like role definition, context, examples, and constraints
 - **Prompt Engineering Techniques**: Applies industry-standard prompt engineering best practices:
   - Role-based prompting
@@ -42,7 +42,7 @@ Or use specific commands:
 
 #### Prerequisites
 - Python 3.8 or higher
-- OpenAI API key (optional, but required for AI features)
+- Google Gemini API key (optional, but required for AI features)
 
 #### Installation
 
@@ -60,7 +60,7 @@ pip install -r requirements.txt
 3. Configure API key (optional):
 ```bash
 cp .env.example .env
-# Edit .env and add your OpenAI API key
+# Edit .env and add your Google Gemini API key
 ```
 
 ### Usage
@@ -131,14 +131,14 @@ The app implements these key techniques:
 
 Create a `.env` file with:
 ```
-OPENAI_API_KEY=your_api_key_here
-OPENAI_MODEL=gpt-5-mini
+GEMINI_API_KEY=your_api_key_here
+GEMINI_MODEL=gemini-pro
 ```
 
 Supported models:
-- `gpt-5-mini` (default, recommended)
-- `gpt-4`
-- `gpt-3.5-turbo`
+- `gemini-pro` (default, recommended)
+- `gemini-1.5-pro`
+- `gemini-1.5-flash`
 
 ## 📁 Project Structure
 
@@ -166,7 +166,7 @@ This project is open source and available under the MIT License.
 
 ## 🔗 Links
 
-- [OpenAI API Documentation](https://platform.openai.com/docs)
+- [Google Gemini API Documentation](https://ai.google.dev/docs)
 - [Prompt Engineering Guide](https://www.promptingguide.ai/)
 
 ## 💡 Tips for Best Results

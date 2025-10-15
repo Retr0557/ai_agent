@@ -1,16 +1,16 @@
 """
 AI Integration Module
-Handles communication with AI API (OpenAI)
+Handles communication with AI API (Google Gemini)
 """
 
 import os
 from typing import Optional
-from openai import OpenAI
+import google.generativeai as genai
 from dotenv import load_dotenv
 
 class AIOptimizer:
     """
-    Handles AI-powered prompt optimization using OpenAI API
+    Handles AI-powered prompt optimization using Google Gemini API
     """
     
     def __init__(self):
@@ -18,19 +18,20 @@ class AIOptimizer:
         Initialize the AI optimizer with API credentials
         """
         load_dotenv()
-        self.api_key = os.getenv('OPENAI_API_KEY')
-        self.model = os.getenv('OPENAI_MODEL', 'gpt-5-mini')
+        self.api_key = os.getenv('GEMINI_API_KEY')
+        self.model_name = os.getenv('GEMINI_MODEL', 'gemini-pro')
         
         if not self.api_key or self.api_key == 'your_api_key_here':
-            self.client = None
+            self.model = None
         else:
-            self.client = OpenAI(api_key=self.api_key)
+            genai.configure(api_key=self.api_key)
+            self.model = genai.GenerativeModel(self.model_name)
     
     def is_configured(self) -> bool:
         """
         Check if the AI optimizer is properly configured
         """
-        return self.client is not None
+        return self.model is not None
     
     def optimize_prompt(self, optimization_instructions: str) -> Optional[str]:
         """
@@ -40,23 +41,14 @@ class AIOptimizer:
             return None
         
         try:
-            response = self.client.chat.completions.create(
-                model=self.model,
-                messages=[
-                    {
-                        "role": "system",
-                        "content": "You are an expert in prompt engineering and optimization. Your responses should be clear, well-structured prompts that follow best practices."
-                    },
-                    {
-                        "role": "user",
-                        "content": optimization_instructions
-                    }
-                ],
-                temperature=0.7,
-                max_tokens=1000
-            )
+            # Combine system instruction with user prompt for Gemini
+            full_prompt = f"""You are an expert in prompt engineering and optimization. Your responses should be clear, well-structured prompts that follow best practices.
+
+{optimization_instructions}"""
             
-            return response.choices[0].message.content.strip()
+            response = self.model.generate_content(full_prompt)
+            
+            return response.text.strip()
         
         except Exception as e:
             print(f"Error calling API: {str(e)}")
@@ -69,30 +61,18 @@ class AIOptimizer:
         if not self.is_configured():
             return None
         
-        suggestion_prompt = f"""Analyze this prompt and provide 3-5 specific, actionable suggestions to improve it using prompt engineering techniques:
+        suggestion_prompt = f"""You are a prompt engineering expert who provides concise, actionable advice.
+
+Analyze this prompt and provide 3-5 specific, actionable suggestions to improve it using prompt engineering techniques:
 
 "{prompt}"
 
 Format your response as a numbered list with brief explanations."""
         
         try:
-            response = self.client.chat.completions.create(
-                model=self.model,
-                messages=[
-                    {
-                        "role": "system",
-                        "content": "You are a prompt engineering expert who provides concise, actionable advice."
-                    },
-                    {
-                        "role": "user",
-                        "content": suggestion_prompt
-                    }
-                ],
-                temperature=0.7,
-                max_tokens=500
-            )
+            response = self.model.generate_content(suggestion_prompt)
             
-            return response.choices[0].message.content.strip()
+            return response.text.strip()
         
         except Exception as e:
             print(f"Error calling API: {str(e)}")

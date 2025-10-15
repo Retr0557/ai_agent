@@ -14,7 +14,7 @@ pip install -r requirements.txt
 
 # 3. (Optional) Set up API key for AI features
 cp .env.example .env
-# Edit .env and add your OpenAI API key
+# Edit .env and add your Google Gemini API key
 ```
 
 ## Try It Out (1 minute)
@@ -58,7 +58,7 @@ $ python main.py
      Enhance your prompts with AI-powered optimization      
 ============================================================
 
-⚠️  Note: AI features require an OpenAI API key.
+⚠️  Note: AI features require a Google Gemini API key.
 Local analysis features are still available.
 
 Choose an option:
@@ -101,19 +101,19 @@ Suggestions for Improvement:
 
 - 📚 Read [EXAMPLES.md](EXAMPLES.md) for detailed before/after comparisons
 - 📖 Check [README.md](README.md) for full documentation
-- 🤖 Set up your OpenAI API key to use AI-powered optimization
+- 🤖 Set up your Google Gemini API key to use AI-powered optimization
 - 🎯 Start improving your prompts!
 
-## Getting an OpenAI API Key
+## Getting a Google Gemini API Key
 
-1. Go to [OpenAI Platform](https://platform.openai.com/)
-2. Sign up or log in
-3. Navigate to API Keys section
-4. Create a new API key
+1. Go to [Google AI Studio](https://makersuite.google.com/app/apikey)
+2. Sign in with your Google account
+3. Click "Create API Key"
+4. Copy the API key
 5. Add it to your `.env` file:
    ```
-   OPENAI_API_KEY=sk-your-key-here
-   OPENAI_MODEL=gpt-5-mini
+   GEMINI_API_KEY=your-api-key-here
+   GEMINI_MODEL=gemini-pro
    ```
 
 ## Troubleshooting
