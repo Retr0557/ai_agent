@@ -85,8 +85,8 @@ def show_menu() -> str:
 def run_optimization_mode(ai_optimizer: AIOptimizer):
     """Run AI-powered optimization"""
     if not ai_optimizer.is_configured():
-        print(f"\n{Fore.RED}❌ AI optimization requires an OpenAI API key.")
-        print(f"{Fore.YELLOW}Please set your OPENAI_API_KEY in a .env file.")
+        print(f"\n{Fore.RED}❌ AI optimization requires a Google Gemini API key.")
+        print(f"{Fore.YELLOW}Please set your GEMINI_API_KEY in a .env file.")
         print(f"{Fore.YELLOW}Example: Copy .env.example to .env and add your API key.")
         return
     
@@ -136,8 +136,8 @@ def run_analysis_mode():
 def run_suggestions_mode(ai_optimizer: AIOptimizer):
     """Get AI suggestions for improvement"""
     if not ai_optimizer.is_configured():
-        print(f"\n{Fore.RED}❌ AI suggestions require an OpenAI API key.")
-        print(f"{Fore.YELLOW}Please set your OPENAI_API_KEY in a .env file.")
+        print(f"\n{Fore.RED}❌ AI suggestions require a Google Gemini API key.")
+        print(f"{Fore.YELLOW}Please set your GEMINI_API_KEY in a .env file.")
         return
     
     print_section("Get AI Suggestions")
@@ -164,7 +164,7 @@ def main():
     ai_optimizer = AIOptimizer()
     
     if not ai_optimizer.is_configured():
-        print(f"{Fore.YELLOW}⚠️  Note: AI features require an OpenAI API key.")
+        print(f"{Fore.YELLOW}⚠️  Note: AI features require a Google Gemini API key.")
         print(f"{Fore.YELLOW}Local analysis features are still available.\n")
     
     while True:
