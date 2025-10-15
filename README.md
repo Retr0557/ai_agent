@@ -144,13 +144,16 @@ Supported models:
 
 ```
 ai_agent/
-├── main.py              # Main application entry point
-├── prompt_engineer.py   # Prompt engineering logic and analysis
-├── ai_optimizer.py      # AI integration module
-├── requirements.txt     # Python dependencies
-├── .env.example        # Example environment configuration
-├── .gitignore          # Git ignore patterns
-└── README.md           # Documentation
+├── main.py                 # Main application entry point
+├── prompt_engineer.py      # Prompt engineering logic and analysis
+├── ai_optimizer.py         # AI integration module
+├── requirements.txt        # Python dependencies
+├── .env.example           # Example environment configuration
+├── .gitignore             # Git ignore patterns
+├── README.md              # Documentation
+├── advanced-examples.js   # JavaScript examples with network access
+├── package.json           # Node.js dependencies for JS examples
+└── ADVANCED_EXAMPLES.md   # JavaScript examples documentation
 ```
 
 ## 🤝 Contributing
@@ -168,6 +171,7 @@ This project is open source and available under the MIT License.
 
 - [Google Gemini API Documentation](https://ai.google.dev/docs)
 - [Prompt Engineering Guide](https://www.promptingguide.ai/)
+- [Advanced JavaScript Examples](ADVANCED_EXAMPLES.md) - Network-enabled examples
 
 ## 💡 Tips for Best Results
 

@@ -1,0 +1,21 @@
+{
+  "name": "ai-prompt-optimizer-examples",
+  "version": "1.0.0",
+  "description": "Advanced JavaScript examples for AI Prompt Optimizer",
+  "main": "advanced-examples.js",
+  "scripts": {
+    "test": "node advanced-examples.js"
+  },
+  "keywords": [
+    "ai",
+    "prompt",
+    "optimization",
+    "examples"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^2.6.7",
+    "dotenv": "^16.0.0"
+  }
+}
