@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 
 const API_BASE_URL = 'http://localhost:8001'
@@ -13,7 +13,7 @@ function App() {
   const [healthStatus, setHealthStatus] = useState(null)
 
   // Fetch health status on mount
-  useState(() => {
+  useEffect(() => {
     fetchHealth()
   }, [])
 
