@@ -2,6 +2,8 @@
 
 An intelligent prompt optimization tool that uses AI and prompt engineering techniques to transform basic prompts into highly effective, well-structured prompts.
 
+**Now available as both a CLI tool and a modern Web Application!**
+
 ## ✨ Features
 
 - **AI-Powered Optimization**: Uses Google's Gemini AI models to intelligently optimize prompts
@@ -14,15 +16,51 @@ An intelligent prompt optimization tool that uses AI and prompt engineering tech
   - Few-shot examples
   - Output format specification
   - Constraint definition
-- **Interactive CLI**: User-friendly command-line interface with colored output
+- **Multiple Interfaces**: 
+  - **Web App**: Modern React frontend with FastAPI backend
+  - **CLI**: Interactive command-line interface with colored output
 - **Local Analysis Mode**: Works without API key for basic analysis
 - **AI Suggestions**: Get specific, actionable improvement suggestions
 
-## 🚀 Quick Start
+## 🌐 Web Application (NEW!)
+
+The AI Prompt Optimizer is now available as a full-featured web application with a beautiful, modern interface!
+
+### Quick Start - Web App
+
+**See [WEB_APP_GUIDE.md](WEB_APP_GUIDE.md) for detailed setup instructions.**
+
+1. **Start the Backend:**
+   ```bash
+   pip install -r requirements.txt
+   uvicorn backend.api:app --host 0.0.0.0 --port 8001 --reload
+   ```
+
+2. **Start the Frontend:**
+   ```bash
+   cd frontend
+   npm install
+   npm run dev
+   ```
+
+3. **Access the App:**
+   Open your browser to `http://localhost:5173`
+
+### Web App Features
+- 📊 **Analyze Tab**: Get instant analysis of your prompts without API key
+- ✨ **Optimize Tab**: AI-powered prompt optimization (requires API key)
+- 💡 **Suggestions Tab**: Get AI suggestions for improvement
+- 📚 **Tips Tab**: Learn prompt engineering best practices
+- 🎨 **Modern UI**: Beautiful gradient design with responsive layout
+- ⚡ **Real-time**: Instant feedback and results
+
+## 🚀 CLI Quick Start
 
 > **📖 New to this project? Check out [QUICKSTART.md](QUICKSTART.md) for a 3-minute guided setup!**
 
-### Automated Setup (Recommended)
+### For CLI Usage
+
+#### Automated Setup (Recommended)
 
 Use the helper script for easy setup:
 ```bash
@@ -63,7 +101,7 @@ cp .env.example .env
 # Edit .env and add your Google Gemini API key
 ```
 
-### Usage
+### CLI Usage
 
 **Interactive Mode:**
 ```bash
@@ -144,10 +182,19 @@ Supported models:
 
 ```
 ai_agent/
-├── main.py              # Main application entry point
+├── backend/
+│   └── api.py           # FastAPI backend server
+├── frontend/            # React frontend application
+│   ├── src/
+│   │   ├── App.jsx     # Main React component
+│   │   ├── App.css     # Styling
+│   │   └── ...
+│   └── package.json
+├── main.py              # CLI application entry point
 ├── prompt_engineer.py   # Prompt engineering logic and analysis
 ├── ai_optimizer.py      # AI integration module
 ├── requirements.txt     # Python dependencies
+├── WEB_APP_GUIDE.md    # Web app setup guide
 ├── .env.example        # Example environment configuration
 ├── .gitignore          # Git ignore patterns
 └── README.md           # Documentation
